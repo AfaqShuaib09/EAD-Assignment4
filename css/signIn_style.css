@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@font-face {
+    font-family: "ntr";
+    src: url("/fonts/NTR-Regular.ttf")
+}
+
+@font-face {
+    font-family: "comfortaa-regular";
+    src: url("/fonts/Comfortaa-Regular.ttf")
+}
+
+@font-face {
+    font-family: "comfortaa-bold";
+    src: url("/fonts/Comfortaa-Bold.ttf")
+}
+
+:root {
+    --danger : #f1646c;
+    --darkblue : #28365f;
+    --success : #36c979;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: grey;
+}
+
+div.container{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.container {
+    width:500px;
+    height: 400px;
+    background-color: grey;
+    border-radius: 25px;
+    margin-bottom: 2px;
+}
+
+div.head{
+    border-radius: 25px 25px 0px 0px;
+    background-color: var(--danger);
+    color: whitesmoke;
+    height: 100px;
+    vertical-align: middle;
+    line-height: 90px;   
+    padding-left: 30px;
+}
+
+i {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+span {
+    padding: auto;
+    font-size: 40px;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+div.body {
+    height: 299px;
+    background-color: white;
+    border-radius: 0px 0px 25px 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#login_label {
+    margin-top:20px;
+    display:inline-block;
+    color: grey;
+    font-size: 20px;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 15px;
+}
+
+input[type="text"] , input[type="password"]{
+    padding-left: 7px;
+    font-family: 'Outfit', sans-serif;
+    height: 35px;
+    width: 100%;
+    font-size: 18px;
+    background-color: whitesmoke;
+    border: none;
+    outline:none;
+}
+
+#pswd_label {
+    margin-top:10px;
+    display:inline-block;
+    color: grey;
+    font-size: 20px;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    margin-top: 12px;
+    background-color: var(--success) ;
+    color: white;
+    font-size: 14px;
+    width: 80px;
+    height: 35px;
+    padding: 4px 8px;
+    border: none;
+    line-height: 24px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width:25%;
+    margin-left:37.5%;
+    margin-right:37.5%;
+}
+
+.error{
+    font-size: 10px !important;
+    color: var(--danger) !important;
+}

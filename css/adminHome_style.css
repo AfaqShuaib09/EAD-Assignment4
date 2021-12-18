@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+/* font-family: 'Prompt', sans-serif; */
+
+@font-face {
+    font-family: "city-boys-regular";
+    src: url("/fonts/city_boy_regular.otf");
+}
+
+@font-face {
+    font-family: "ntr";
+    src: url("/fonts/NTR-Regular.ttf")
+}
+
+@font-face {
+    font-family: "comfortaa-regular";
+    src: url("/fonts/Comfortaa-Regular.ttf")
+}
+
+@font-face {
+    font-family: "comfortaa-bold";
+    src: url("/fonts/Comfortaa-Bold.ttf")
+}
+
+:root {
+    --danger : #f1646c;
+    --darkblue : #28365f;
+    --success : #36c979;
+    --primary : #1dbb9c;
+    --primary-2: #15a284;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color: #333333;
+}
+
+div.main{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 15px solid gray;
+}
+
+div.main {
+    width:450px;
+    height: 350px;
+    background-color: whitesmoke;
+    margin-bottom: 2px;
+}
+
+div.head {
+    font-family: 'city-boys-regular',sans-serif;
+    color: white;
+    font-weight: bold;
+    height: 70px;
+    background-color: var(--primary);
+    vertical-align: middle;
+    font-size: 30px;
+    line-height: 70px;   
+    text-align: center;
+}
+
+div.body {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+button {
+    margin-top: 45px;
+    background-color: var(--primary-2) ;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 50px;
+}
+
+button:hover {
+    background-color: var(--primary);
+    border: var(--darkblue);
+}
+
+div.footer {
+    padding-left: 50px;
+    float: right;
+}
+
+#footer {
+    position:fixed;
+    left:0px;
+    bottom:5px;
+    height: 50px;
+    width:100%;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: transparent;
+    color: #c07421;
+  }
+
+a {
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: white;
+}
+
+a.right{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    padding-right: 50px;
+}
+
+.bg-orange {
+    color: #c07421;
+    display: inline;
+}

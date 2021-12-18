@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+:root {
+    --danger : #f1646c;
+    --darkblue : #28365f;
+    --success : #36c979;
+    --header: #fa5453;
+    --slate: #4837b5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin-bottom: 50px;
+}
+
+div.container{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+p.product_name {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+p.pro_type {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+p.price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+p.desc, p.admin {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+p.updated_time {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.item_img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+.orange_color {
+    background-color: #fa8128;
+}
+
+.green_color {
+    background-color: var(--success);
+}
+
+.text_color_blue {
+    color: var(--slate);
+}
+
+button {
+    margin-top: 12px;
+    color: white;
+    font-size: 14px;
+    width: 80px;
+    height: 35px;
+    padding: 4px 8px;
+    border: none;
+    line-height: 24px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
