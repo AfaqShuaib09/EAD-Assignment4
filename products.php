@@ -4,6 +4,9 @@
 
 <?php 
     session_start();
+    if(isset($_SESSION["userid"])){
+        header("location: AdminHome.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

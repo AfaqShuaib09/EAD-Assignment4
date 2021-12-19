@@ -2,7 +2,7 @@
     require('conn.php');
 ?>
 <?php 
-    session_start();
+    require('validateUser.php');
 ?>
 
 <!DOCTYPE html>
