@@ -1,16 +1,5 @@
 <?php 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "assignment2";
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password,$dbname);
-
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    echo "Connected successfully";
+    require('conn.php');
 ?>
 <?php 
     session_start();
@@ -46,6 +35,12 @@
 				return flag;
 			});
 		});
+
+        function goToSignIn(){
+            $_SESSION['user'] = null;
+            $_SESSION["userid"] = null;
+            window.location.href = "./SignIn.php";
+       }
 	</script>
 </head>
 <body>
@@ -120,6 +115,11 @@
                 <input type="file" id="myfile" name="myfile" accept=".png, .jpg, .jpeg"/><br><br>
                 <input type="submit" value="Add Product" id="btnAdd" name="btnAdd">
             </form>
+        </div>
+        <div class="footer">
+            <footer id="footer">
+                <a href="#" class="right" id="logout" onclick="goToSignIn()"> <pre class="bg-orange">| </pre>Logout</a>
+            </footer>
         </div>
         <br><br>
         <?php echo'<div class="error" style="color:red;" >' .$msg. '</div>' ; ?>

@@ -67,7 +67,7 @@
             $row = mysqli_fetch_assoc($result); 
             $_SESSION['user']=$uname;
             $_SESSION["userid"] = $row["AdminId"];
-            header('Location: AdminProductView.php');
+            header('Location: AdminHome.php');
         }
         else {
             $error =  "Invalid User Name or Password";
