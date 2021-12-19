@@ -20,7 +20,7 @@
 		
 		$(document).ready(function(){
 			
-			$("#btnSignUp").click(function(){
+			$("#btnAdd").click(function(){
 				var pro_name = $("#name").val();
 				var price = $('price').val();
                 var type = $("#myselect option:selected" ).val();
@@ -34,13 +34,10 @@
 				}
 				return flag;
 			});
-		});
+		});        
 
-        function goToSignIn(){
-            $_SESSION['user'] = null;
-            $_SESSION["userid"] = null;
-            window.location.href = "./SignIn.php";
-       }
+       
+
 	</script>
 </head>
 <body>
@@ -80,6 +77,7 @@
                 $sql = "INSERT INTO product (Name, TypeId, Price, Description, PicURL, UpdatedOn, UpdatedBy) VALUES ('$product_name',$type,$price,'$desc','$new_name',SYSDATE(),$AdminId)";
                 if ($conn->query($sql) === TRUE) {
                     $msg = "Product Added Successfully.";
+                    header("location: AdminHome.php");
                 } else {
                     $msg = "Some Problem occured"; 
                 }
@@ -110,7 +108,7 @@
 				    ?>
                 </select>
                 <label for="desc" id="desc_label"> Description </label><br>
-                <textarea id="txtid" name="txtname" rows="2" cols="43" placeholder="Describe yourself here..."></textarea>
+                <textarea id="txtid" name="txtname" rows="2" cols="43" placeholder="Description..."></textarea>
                 <label for="pic" id="pic_label"> Picture </label><br>
                 <input type="file" id="myfile" name="myfile" accept=".png, .jpg, .jpeg"/><br><br>
                 <input type="submit" value="Add Product" id="btnAdd" name="btnAdd">
@@ -118,11 +116,18 @@
         </div>
         <div class="footer">
             <footer id="footer">
-                <a href="#" class="right" id="logout" onclick="goToSignIn()"> <pre class="bg-orange">| </pre>Logout</a>
+                <a href="signout.php" class="right" id="logout"> <pre class="bg-orange">| </pre>Logout</a>
             </footer>
         </div>
         <br><br>
         <?php echo'<div class="error" style="color:red;" >' .$msg. '</div>' ; ?>
     </div>
+    <script>
+        function goToSignIn(){
+            $_SESSION['user'] = null;
+            $_SESSION["userid"] = null;
+            window.location.href = "./SignIn.php";
+       }
+    </script>
 </body>
 </html>

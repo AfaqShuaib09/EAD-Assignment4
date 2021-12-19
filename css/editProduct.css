@@ -36,14 +36,13 @@ div.container{
     margin-top: 50px;
     margin-bottom: 50px;
     position: absolute;
-    top: 43%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 
 div.container {
     width:400px;
-    height: 630px;
+    height: 800px;
     background-color: grey;
     border-radius: 25px;
     margin-bottom: 2px;
@@ -72,7 +71,7 @@ span {
 }
 
 div.body {
-    height: 559px;
+    height: 659px;
     background-color: white;
     border-radius: 0px 0px 25px 25px;
     padding-left: 30px;

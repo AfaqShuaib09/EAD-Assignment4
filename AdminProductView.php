@@ -1,16 +1,5 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "assignment2";
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password,$dbname);
-
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    echo "Connected successfully";
+    require('conn.php');
 ?>
 
 <?php 
@@ -32,6 +21,7 @@
     </head>
     
     <body>
+        
         <?php 
             $query = "SELECT p.ProductId, p.PicURL ,p.name,t.TypeName, p.Price, p.Description , p.IsActive, a.Name , 
             DATE_FORMAT(p.UpdatedOn, '%d-%b-%Y') as updated_date FROM product p join type t on p.TypeId = t.TypeId join admin a on p.UpdatedBy = a.AdminId"; 
@@ -59,7 +49,8 @@
                     echo "<p class='admin'>Updated by: {$row['Name']}<p>";
                     echo "<p class='updated_time'>Updated on: {$row['updated_date']} <p>";
                     echo "<button class='btnDelete green_color' id='delete_{$row['ProductId']}'> Delete</button>";
-                    echo "<button class='orange_color btnEdit' id='edit_{$row['ProductId']}' style='margin-left:5px'>Edit</button>";
+                    echo "<button class='orange_color btnEdit' id='edit_{$row['ProductId']}' style='margin-left:5px'>
+                    <a href='EditProduct.php?pid={$row['ProductId']}' style='text-decoration: none; color: white;'>Edit</a></button>";
                     echo '</div>';
                     $i=$i+1;
                 }
@@ -109,6 +100,41 @@
                 };//end of change
             }
         </script>
+        <!-- <script>
+            var button = document.getElementsByClassName("btnEdit");
+            console.log(button);
+            for(let i=0;i<button.length;i++)
+            {
+                button[i].onclick = function() {
+                    var div =$(this).closest("div");
+                    var id = parseInt(div.attr("id").slice(2));
+                    console.log(id);
+                    var data = {"action": "editProduct","id": id};
+
+                    var settings= {
+                        type: "POST",
+                        dataType: "json",
+                        url: "api.php",
+                        data: data,
+                        success: function(response) {
+                            if(response.data == true){
+                                alert("Record is updated");
+                                window.location.href = "EditProduct.php";
+                            }
+                            else {
+                                alert("unable to Edit");
+                            }
+                        },
+                        error: function (err, type, httpStatus) {
+                            alert('error has occured');
+                        }
+                    };
+                    $.ajax(settings);
+                    console.log('request sent');
+                    return false;		
+                }
+            }          
+        </script> -->
         
     </body>
 </html>

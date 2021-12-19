@@ -21,6 +21,13 @@
 		$output["data"] = $flag;
 		echo json_encode($output);
 	}
+
+    else if($action=="editProduct"){
+        $id = $_REQUEST["id"];
+        $_SESSION['editProductId'] = $id;
+        $output["data"] = true;
+        echo json_encode($output);
+    }
 	
   }//end of if
   

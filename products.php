@@ -18,30 +18,32 @@
 </head>
 <body>
     <?php 
-        $query = "SELECT p.PicURL ,p.name,t.TypeName, p.Price, p.Description FROM product p join type t on p.TypeId = t.TypeId"; 
+        $query = "SELECT p.PicURL ,p.name,t.TypeName, p.Price, p.Description, p.isActive FROM product p join type t on p.TypeId = t.TypeId"; 
         $sql =mysqli_query($conn, $query);
         $i = 0;
         while($row = mysqli_fetch_array($sql))
         {
-            if($i%4==0){
-                if ($i==0){
-                    echo ('<div class="item-box container">'); 
+            if($row['isActive']==1){
+                if($i%4==0){
+                    if ($i==0){
+                        echo ('<div class="item-box container">'); 
+                    }
+                    else {
+                        echo('</div>');
+                        echo ('<div class="item-box container">');
+                    }
+                
+                    
                 }
-                else {
-                    echo('</div>');
-                    echo ('<div class="item-box container">');
-                }
-               
-                 
+                echo ('<div class="item text_color_red">');
+                echo "<img src='img/{$row['PicURL']}' class='item_img' width='150px' height='150px'/>";
+                echo "<p class='product_name'>{$row['name']}</p>";
+                echo "<p class= 'pro_type'>Type: {$row['TypeName']}</p>";
+                echo "<p class='price'>Price: {$row['Price']}</p>";
+                echo "<p class='desc'>Description: {$row['Description']}<p>";
+                echo '</div>';
+                $i=$i+1;
             }
-            echo ('<div class="item text_color_red">');
-            echo "<img src='img/{$row['PicURL']}' class='item_img' width='150px' height='150px'/>";
-            echo "<p class='product_name'>{$row['name']}</p>";
-            echo "<p class= 'pro_type'>Type: {$row['TypeName']}</p>";
-            echo "<p class='price'>Price: {$row['Price']}</p>";
-            echo "<p class='desc'>Description: {$row['Description']}<p>";
-            echo '</div>';
-            $i=$i+1;
         }
         if($i%4!=1)
         {

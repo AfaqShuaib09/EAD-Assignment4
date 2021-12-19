@@ -45,7 +45,7 @@
     </div>
     <div class="footer">
         <footer id="footer">
-           <a href="SignIn.php" class="right" id="logout"> <pre class="bg-orange">| </pre>Logout</a>
+           <a href="signout.php" class="right" id="logout"> <pre class="bg-orange">| </pre>Logout</a>
 
         </footer>
     </div>
