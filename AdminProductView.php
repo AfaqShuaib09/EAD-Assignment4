@@ -69,28 +69,46 @@
                 echo '</div>';
             }
         ?>
-        <?php
-            
-            function delete_product($id) {
-                $sql = "update product set isActive=0 where ProductId =$id";
-                if ($conn->query($sql) === TRUE) {
-                echo "Record updated successfully";
-                } else {
-                echo "Error updating record: " . $conn->error;
-                }
-            }
-        ?>
         <script>
             var button = document.getElementsByClassName("btnDelete");
             for(let i=0;i<button.length;i++)
             {
                 button[i].onclick = function() {
-                    var div =$(this).closest('div');
+                    var div =$(this).closest("div");
                     var id = parseInt(div.attr("id").slice(2));
                     var deleted_id = id;
                     console.log(id);
-                };
+                
+                    //object to pass as parameter
+                    var data = {"action": "updateActiveStatus","id":id};
+                    
+                    //object pass to $.ajax function to make an AJAX call.
+                    var settings= {
+                        type: "POST",
+                        dataType: "json",
+                        url: "api.php",
+                        data: data,
+                        success: function(response) {
+                            //response.data contains whatever is sent from server
+                            if(response.data == true){
+                                alert("Record is updated");
+                                window.location.href = "AdminProductView.php";
+                            }
+                            else {
+                                alert("unable to update");
+                            }
+                        },
+                        error: function (err, type, httpStatus) {
+                            alert('error has occured');
+                        }
+                    };
+                    
+                    $.ajax(settings);
+                    console.log('request sent');
+                    return false;			
+                };//end of change
             }
         </script>
+        
     </body>
 </html>
