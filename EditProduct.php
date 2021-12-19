@@ -148,6 +148,11 @@
                 <input type="submit" value="Edit Product" name="btnEdit" id="btnEdit">
             </form>
         </div>
+        <div class="footer">
+            <footer id="footer">
+                <a href="signout.php" class="right" id="logout"> <pre class="bg-orange">| </pre>Logout</a>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

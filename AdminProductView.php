@@ -21,7 +21,8 @@
     </head>
     
     <body>
-        
+    <a href="signout.php" style="align:right; color: black;" class="logout"> <pre style="color: orange;">|</pre>Logout</a>
+    <br>
         <?php 
             $query = "SELECT p.ProductId, p.PicURL ,p.name,t.TypeName, p.Price, p.Description , p.IsActive, a.Name , 
             DATE_FORMAT(p.UpdatedOn, '%d-%b-%Y') as updated_date FROM product p join type t on p.TypeId = t.TypeId join admin a on p.UpdatedBy = a.AdminId"; 

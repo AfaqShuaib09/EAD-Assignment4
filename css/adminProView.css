@@ -100,5 +100,29 @@ button.edit {
 
 a {
     text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 200;
+    font-size: 15px;
     color: white;
+}
+
+a.right{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    padding-right: 50px;
+}
+
+.bg-orange {
+    color: #c07421;
+    display: inline;
+}
+
+a.logout {
+    float: right;
+    margin-right: 30px;
+    font-size: 25px;
+}
+pre {
+    display: inline;
 }
